@@ -1,12 +1,11 @@
-from flask import Blueprint, Flask, redirect, url_for, render_template, request, session, send_file
+from flask import Blueprint, Flask, redirect, url_for, render_template, request, session, send_file, flash
 from flask_login import login_required, current_user
 import datetime
-import os
 import pdfkit
+import os
 import base64
 from app import db
 from models import CV
-from flask import flash
 
 
 main = Blueprint('main', __name__, url_prefix="/user")
