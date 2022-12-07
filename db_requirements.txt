@@ -1,0 +1,21 @@
+Database must have 2 tables:
+cv:
+	"id"	INTEGER NOT NULL UNIQUE,
+	"name"	TEXT,
+	"email"	TEXT,
+	"skills"	TEXT,
+	"birth_date"	TEXT,
+	"education"	TEXT,
+	"job_exp"	TEXT,
+	"image"	TEXT,
+	"user_id"	TEXT, 
+  PRIMARY KEY("id")
+
+
+user:
+  "id"	INTEGER NOT NULL UNIQUE,
+	"name"	TEXT,
+	"email"	TEXT UNIQUE,
+	"password"	TEXT,
+	"password_again"	TEXT, 
+  PRIMARY KEY("id")
