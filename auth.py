@@ -1,11 +1,13 @@
 from flask import Blueprint, render_template, redirect, url_for, request, flash
 from werkzeug.security import generate_password_hash, check_password_hash
-from models import User
-from flask_login import login_user, login_required, logout_user
-from app import db, login_manager
-from flask_sqlalchemy import SQLAlchemy
 from flask_migrate import Migrate
-from flask_login import LoginManager
+from flask_login import LoginManager, login_user, login_required, logout_user
+from flask_sqlalchemy import SQLAlchemy
+
+
+from app import db, login_manager
+from models import User
+
 auth = Blueprint('auth', __name__)
 
 
