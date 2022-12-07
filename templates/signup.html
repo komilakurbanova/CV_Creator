@@ -1,0 +1,51 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="column is-4 is-offset-4">
+    <div align="center"><h3 class="title"><font color="#E0FFFF">Sign Up</font></h3>
+        <div class="box">
+            {% with messages = get_flashed_messages(with_categories=true) %}
+            {% if messages %}
+            {% for category, message in messages %}
+            <div class="alert alert-{{category}} alert-dismissible fade show" role="alert">
+                {{ message }}
+                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+            </div>
+            {% endfor %}
+            {% endif %}
+            {% endwith %}
+            <form method="POST" action="/signup">
+                <div class="field">
+                    <div class="control">
+                        <input class="input is-large" type="email" name="email" placeholder="Email" autofocus=""
+                               style="font-size: 18pt; height: 40px; width:300px; border-color:#4682B4; border-style: solid; padding: 5px;">
+                    </div>
+                </div>
+
+                <div class="field">
+                    <div class="control">
+                        <input class="input is-large" type="text" name="name" placeholder="Name" autofocus=""
+                               style="font-size: 18pt; height: 40px; width:300px; border-color:#4682B4; border-style: solid; padding: 5px;">
+                    </div>
+                </div>
+
+                <div class="field">
+                    <div class="control">
+                        <input class="input is-large" type="password" name="password" placeholder="Password"
+                               style="font-size: 18pt; height: 40px; width:300px; border-color:#4682B4; border-style: solid; padding: 5px;">
+                    </div>
+                </div>
+
+                <div class="field">
+                    <div class="control">
+                        <input class="input is-large" type="password" name="password_again"
+                               placeholder="Confirm Password"
+                               style="font-size: 18pt; height: 40px; width:300px; border-color:#4682B4; border-style: solid; padding: 5px;">
+                    </div>
+                </div>
+                <button class="button is-block is-info is-large is-fullwidth" style="font-size: 15pt">Sign Up</button>
+            </form>
+        </div>
+    </div>
+</div>
+{% endblock %}

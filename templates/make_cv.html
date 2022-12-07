@@ -1,0 +1,32 @@
+{% extends "base.html" %}
+
+{% block content %}
+<h4 class="title" xmlns="http://www.w3.org/1999/html">
+    <div align="center"><font color="#E0FFFF">Fulfill information for your CV</font></div>
+</h4>
+<form action="#" method="POST" enctype="multipart/form-data">
+    <p> <font size="4.5" color="#E0FFFF">Name:</font></p>
+    <p><input type="text" name="name" required placeholder="Jane" value="{{ cv.name }}" maxlength="100" style="border-color:#20B2AA; border-style: solid; padding: 3px;"/></p>
+    <p> <font  size="4.5" color="#E0FFFF">Surname:</font></p>
+    <p><input type="text" name="surname" required placeholder="Doe" value="{{ cv.surname }}" maxlength="100" style="border-color:#20B2AA; border-style: solid; padding: 3px;"/></p>
+    <p> <font  size="4.5" color="#E0FFFF">Birth date:</font></p>
+    <p><input type="date" name="birth_date" required value="{{ cv.birth_date }}" /></p>
+    <p> <font  size="4.5" color="#E0FFFF">Skills:</font></p>
+    <p><textarea rows="10" cols="45" name="skills" placeholder="Your soft and hard skills" maxlength="1200" style="border-color:#20B2AA; border-style: solid; padding: 3px;">{{ cv.occupation }}</textarea></p>
+    <p> <font  size="4.5" color="#7B68EE">Education:</font></p>
+    <p><textarea rows="10" cols="45" name="education" placeholder="Your education" maxlength="1200" style="border-color:#20B2AA; border-style: solid; padding: 3px;">{{ cv.education }}</textarea></p>
+    <p> <font  size="4.5" color="#7B68EE">Job experience:</font></p>
+    <p><textarea rows="10" cols="45" name="job_exp" placeholder="Your job experience" maxlength="1200" style="border-color:#20B2AA; border-style: solid; padding: 3px;">{{ cv.education }}</textarea></p>
+    <p><font  size="5"> Image:</font> </p>
+    <p><input type="file" name="image" accept="image/png jpg jpeg"/></p>
+    <p><input class="input_btn" name="action" type="submit" value="download"/>                <input class="save_btn" name="action" type="submit" value="save draft"/>    </p>
+    <p></p>
+
+</form>
+
+
+{% endblock %}
+
+
+
+
